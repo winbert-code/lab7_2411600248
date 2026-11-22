@@ -147,6 +147,7 @@ resources/views/widgets/*
 resources/views/emails/*
 resources/views/sales-orders/receipt.blade.php
 docs/LAB_REPORT.md
+docs/Lab7_2411600248_Timon_Filled.docx
 docs/Sales_Receipt_DEMO-SO-1001.pdf
 screenshots/01-*.png … screenshots/19-*.png
 ```
@@ -158,9 +159,12 @@ The lab report source is `docs/LAB_REPORT.md`. The generated PDF is named
 produced from the original Laboratory Exercise 7 DOCX template with all
 original sections preserved: answers are inserted under **QUESTIONS**, the 18
 required screenshots plus a printed sales receipt are inserted under
-**Output / Results**, and the conclusion is the final section. The printable
-receipt is also saved separately as `docs/Sales_Receipt_DEMO-SO-1001.pdf`, and
-the `sales-orders/receipt` page includes a **Print receipt** button.
+**Output / Results**, and the conclusion is the final section. The editable,
+filled source document is `docs/Lab7_2411600248_Timon_Filled.docx`; it keeps
+every original template section, table, header/footer and embedded image.
+The printable receipt is also saved separately as
+`docs/Sales_Receipt_DEMO-SO-1001.pdf`, and the `sales-orders/receipt` page
+includes a **Print receipt** button.
 
 ## GitHub
 
