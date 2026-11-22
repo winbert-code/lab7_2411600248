@@ -1,0 +1,24 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
+
+class NotificationController extends Controller
+{
+    public function markAsRead(Request $request, string $id): RedirectResponse
+    {
+        $notification = $request->user()->notifications()->whereKey($id)->firstOrFail();
+        $notification->markAsRead();
+
+        return back()->with('success', 'Alert marked as read.');
+    }
+
+    public function markAllAsRead(Request $request): RedirectResponse
+    {
+        $request->user()->unreadNotifications->markAsRead();
+
+        return back()->with('success', 'All alerts marked as read.');
+    }
+}

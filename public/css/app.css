@@ -1,0 +1,223 @@
+/*
+ * ByteStock theme — "Green Rush"
+ * Palette sampled from the supplied reference image:
+ * deep greens #0E5113 / #03730B, vivid green #1DBF04,
+ * lime #A7F205, light green #98D800, off-white #F8F8F8.
+ * No navy/blue — the greens carry the whole UI.
+ */
+:root {
+    --ink-900: #0b2a10;
+    --ink-800: #124d18;
+    --ink-700: #03730b;
+
+    --green-900: #03730b;
+    --green-700: #1dbf04;
+    --green-500: #20c000;
+    --lime: #a7f205;
+    --lime-soft: #98d800;
+
+    --surface: #f8f8f8;
+    --surface-raised: #ffffff;
+    --border: #e0e0e0;
+    --text: #0b2a10;
+    --muted: #68786a;
+
+    --success: #1dbf04;
+    --warning: #7a9e00;
+    --danger: #d64550;
+    --focus-rgb: 29, 191, 4;
+
+    /* Override Bootstrap's default blue at the source. */
+    --bs-primary: #1dbf04;
+    --bs-primary-rgb: 29, 191, 4;
+    --bs-link-color: #03730b;
+    --bs-link-hover-color: #1dbf04;
+    --bs-focus-ring-color: rgba(29, 191, 4, .25);
+}
+
+body {
+    background: var(--surface);
+    color: var(--text);
+    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+    min-height: 100vh;
+}
+
+a { color: var(--green-900); }
+a:hover { color: var(--green-700); }
+
+.app-navbar {
+    background: linear-gradient(90deg, var(--ink-900), var(--ink-700));
+    box-shadow: 0 2px 12px rgba(3, 115, 11, .28);
+}
+
+.app-navbar .navbar-brand { color: #fff; letter-spacing: .3px; }
+.app-navbar .navbar-brand:hover { color: var(--lime); }
+.app-navbar .nav-link { color: rgba(255, 255, 255, .78); border-radius: .5rem; }
+.app-navbar .nav-link:hover,
+.app-navbar .nav-link.active { color: var(--lime); background: rgba(167, 242, 5, .16); }
+
+.app-card, .stat-card {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: var(--surface-raised);
+    box-shadow: 0 4px 18px rgba(3, 115, 11, .07);
+}
+
+.app-card .card-header { border-bottom: 1px solid var(--border) !important; }
+
+.stat-card .card-body { padding: 1.35rem; }
+.stat-label { color: var(--muted); font-size: .82rem; font-weight: 600; text-transform: uppercase; letter-spacing: .5px; }
+.stat-value { font-weight: 800; color: var(--ink-800); font-size: 1.8rem; }
+.stat-link { display: inline-block; margin-top: .75rem; font-size: .78rem; font-weight: 600; color: var(--green-900); }
+.stat-link:hover { color: var(--green-700); }
+
+.stat-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    font-size: 1.25rem;
+}
+.icon-primary { background: rgba(29, 191, 4, .14); color: var(--green-900); }
+.icon-warning { background: rgba(167, 242, 5, .24); color: var(--warning); }
+.icon-danger { background: rgba(214, 69, 80, .13); color: var(--danger); }
+.icon-success { background: rgba(29, 191, 4, .14); color: var(--green-900); }
+
+.btn-primary {
+    --bs-btn-bg: var(--green-700);
+    --bs-btn-border-color: var(--green-700);
+    --bs-btn-hover-bg: var(--green-900);
+    --bs-btn-hover-border-color: var(--green-900);
+    --bs-btn-active-bg: var(--ink-800);
+    --bs-btn-active-border-color: var(--ink-800);
+    --bs-btn-focus-shadow-rgb: var(--focus-rgb);
+}
+
+.btn-outline-primary {
+    --bs-btn-color: var(--green-900);
+    --bs-btn-border-color: var(--green-900);
+    --bs-btn-hover-bg: var(--green-700);
+    --bs-btn-hover-border-color: var(--green-700);
+    --bs-btn-hover-color: #fff;
+}
+
+.table thead th {
+    color: var(--muted);
+    font-size: .78rem;
+    text-transform: uppercase;
+    letter-spacing: .4px;
+    white-space: nowrap;
+}
+
+.table > :not(caption) > * > * { padding: .85rem .9rem; }
+
+.stock-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: .3rem;
+    padding: .3rem .6rem;
+    border-radius: 999px;
+    font-size: .75rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+.badge-in { background: rgba(29, 191, 4, .14); color: var(--green-900); }
+.badge-low { background: rgba(167, 242, 5, .32); color: #5f7d00; }
+.badge-out { background: rgba(214, 69, 80, .13); color: var(--danger); }
+.badge-inactive { background: rgba(100, 116, 139, .16); color: #4b5563; }
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--green-700);
+    box-shadow: 0 0 0 .2rem rgba(var(--focus-rgb), .18);
+}
+
+.form-label { font-weight: 600; font-size: .88rem; color: var(--ink-800); }
+
+/* Bootstrap checkboxes, radios, switches and focus rings stay green. */
+.form-check-input:checked {
+    background-color: var(--green-700);
+    border-color: var(--green-700);
+}
+.form-check-input:focus {
+    border-color: var(--green-700);
+    box-shadow: 0 0 0 .2rem rgba(var(--focus-rgb), .18);
+}
+.form-switch .form-check-input:checked { background-color: var(--green-700); }
+::selection { background: rgba(var(--focus-rgb), .28); color: var(--ink-900); }
+a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--green-700);
+    outline-offset: 2px;
+}
+
+.app-footer {
+    background: var(--ink-900);
+    color: rgba(255, 255, 255, .65);
+    font-size: .8rem;
+}
+
+/* Authentication screens */
+.auth-body {
+    background:
+        radial-gradient(circle at top left, rgba(167, 242, 5, .22), transparent 45%),
+        linear-gradient(135deg, #0e5113 0%, #03730b 38%, #1dbf04 74%, #a7f205 100%);
+}
+.auth-brand h1, .auth-brand p { color: #fff; }
+.auth-brand p {
+    color: rgba(255, 255, 255, .95);
+    opacity: 1;
+    font-weight: 500;
+    letter-spacing: .2px;
+    text-shadow: 0 1px 2px rgba(3, 60, 10, .65);
+}
+.auth-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 54px;
+    border-radius: 16px;
+    background: var(--lime);
+    color: var(--ink-900);
+    font-size: 1.7rem;
+}
+.auth-card {
+    border: none;
+    border-radius: 16px;
+    border-top: 4px solid var(--lime-soft);
+}
+
+/* Pagination */
+.pagination .page-link { color: var(--green-900); border-color: var(--border); }
+.pagination .active .page-link { background: var(--green-700); border-color: var(--green-700); color: #fff; }
+.pagination .page-link:hover { color: var(--green-700); }
+
+/* Lab 6 — transaction types, alerts and live dashboard feedback */
+.badge-success { background: rgba(29, 191, 4, .14); color: var(--green-900); }
+.badge-warning { background: rgba(167, 242, 5, .32); color: #5f7d00; }
+.badge-danger { background: rgba(214, 69, 80, .13); color: var(--danger); }
+.badge-secondary { background: rgba(100, 116, 139, .16); color: #4b5563; }
+
+.text-success { color: var(--green-900) !important; }
+.text-warning { color: #6f9000 !important; }
+.text-danger { color: var(--danger) !important; }
+
+.alert-count {
+    font-size: .65rem;
+    min-width: 1.25rem;
+    border: 2px solid var(--ink-900);
+}
+
+.notification-menu { width: 22rem; max-width: 90vw; }
+.notification-menu .dropdown-item { white-space: normal; }
+.notification-menu .dropdown-item:hover { background: rgba(29, 191, 4, .08); }
+
+@keyframes valuePulse {
+    0% { transform: scale(1); color: var(--green-900); }
+    40% { transform: scale(1.12); color: var(--green-700); }
+    100% { transform: scale(1); color: var(--ink-800); }
+}
+.value-updated { animation: valuePulse .65s ease-out; display: inline-block; }
+
+#liveIndicator { font-size: .75rem; }
