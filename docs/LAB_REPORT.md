@@ -317,3 +317,9 @@ barcode receiving and a supplier portal.
 | 16 | Terminal showing the scheduled command output | `screenshots/16-scheduled-command-output.png` |
 | 17 | Web browser displaying the Supplier Performance Report | `screenshots/17-supplier-performance.png` |
 | 18 | GitHub repository showing the updated project files | `screenshots/18-github-repository.png` |
+| 19 | Additional: printed ByteStock sales receipt | `screenshots/19-printed-receipt.png` |
+
+The printable receipt is also saved as `docs/Sales_Receipt_DEMO-SO-1001.pdf`.
+The final report PDF is generated from the original Laboratory Exercise 7
+template with every original section preserved; answers are placed under
+QUESTIONS, screenshots under Output / Results, and the conclusion last.

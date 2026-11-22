@@ -403,8 +403,8 @@ class OrderManagementTest extends TestCase
             ->assertSee($order->order_number)
             ->assertSee($this->product->name)
             ->assertSee('300.00')
-            ->assertDontSee('Print receipt')
-            ->assertDontSee('window.print()');
+            ->assertSee('Print receipt')
+            ->assertSee('window.print()');
 
         $pending = SalesOrder::create([
             'order_number' => 'SO-TEST-006',

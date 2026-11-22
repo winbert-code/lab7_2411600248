@@ -22,7 +22,8 @@
             gap: 8px;
             justify-content: flex-end;
         }
-        .actions a {
+        .actions a,
+        .actions button {
             border: 1px solid #0e5113;
             border-radius: 6px;
             background: #fff;
@@ -32,6 +33,12 @@
             font-weight: 700;
             cursor: pointer;
             text-decoration: none;
+        }
+        .actions button { background: #0e5113; color: #fff; }
+        @media print {
+            body { background: #fff; padding: 0; }
+            .actions { display: none; }
+            .receipt { box-shadow: none; margin: 0 auto; padding: 18mm 0; }
         }
         .receipt {
             max-width: 420px;
@@ -66,6 +73,7 @@
     <div class="actions">
         <a href="{{ route('receipts.index') }}">All receipts</a>
         <a href="{{ route('sales-orders.show', $order) }}">Back to order</a>
+        <button type="button" onclick="window.print()">Print receipt</button>
     </div>
 
     <div class="receipt">

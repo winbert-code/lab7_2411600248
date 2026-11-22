@@ -72,7 +72,7 @@ Repository: <https://github.com/winbert-code/lab7_2411600248>
 | 6 — Supplier performance | On-time percentage, received order count, average delivery days, order accuracy and total approved value, shown in a searchable report with CSV/PDF export. |
 | 7 — Advanced search and filtering | Suppliers, purchase orders, products and performance reports support text search plus status/date/supplier filters. |
 | 8 — Exports | CSV and PDF exports for products, purchase orders, transactions and supplier performance under `/exports/...`. |
-| 9 — Testing | 48 automated tests / 255 assertions covering replenishment, approvals, policies, receiving, dashboard/API, exports, search and soft deletes. |
+| 9 — Testing | 48 automated tests / 255 assertions covering replenishment, approvals, policies, receiving, printable receipts, dashboard/API, exports, search and soft deletes. |
 | 10 — Documentation | This README plus `docs/LAB_REPORT.md` and the 18 required screenshots in `screenshots/`. |
 
 ## Authorization
@@ -145,16 +145,22 @@ resources/views/suppliers/*
 resources/views/purchase-orders/*
 resources/views/widgets/*
 resources/views/emails/*
+resources/views/sales-orders/receipt.blade.php
 docs/LAB_REPORT.md
-screenshots/01-*.png … screenshots/18-*.png
+docs/Sales_Receipt_DEMO-SO-1001.pdf
+screenshots/01-*.png … screenshots/19-*.png
 ```
 
 ## Report and submission
 
 The lab report source is `docs/LAB_REPORT.md`. The generated PDF is named
-`Lab7_2411600248_Timon.pdf` and is committed at the repository root. The
-`screenshots/` directory contains the 18 required images referenced by the
-report.
+`Lab7_2411600248_Timon.pdf` and is committed at the repository root. It is
+produced from the original Laboratory Exercise 7 DOCX template with all
+original sections preserved: answers are inserted under **QUESTIONS**, the 18
+required screenshots plus a printed sales receipt are inserted under
+**Output / Results**, and the conclusion is the final section. The printable
+receipt is also saved separately as `docs/Sales_Receipt_DEMO-SO-1001.pdf`, and
+the `sales-orders/receipt` page includes a **Print receipt** button.
 
 ## GitHub
 
